@@ -36,7 +36,6 @@ output "docker_instance_public_ip" {
 }
 */
 
-/*
 resource "aws_instance" "web_instance" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
@@ -55,4 +54,3 @@ resource "aws_instance" "web_instance" {
 output "web_instance_public_ip" {
   value = "${aws_instance.web_instance.public_ip}"
 }
-*/
