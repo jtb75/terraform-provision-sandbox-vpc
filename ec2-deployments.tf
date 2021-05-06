@@ -28,6 +28,7 @@ resource "aws_instance" "docker_instance" {
 
   tags = {
     Name = "docker-instance"
+    Defender = "false"
   }
 }
 
