@@ -20,7 +20,7 @@ output "utility_instance_public_ip" {
 resource "aws_instance" "docker_instance" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
-  key_name = "nv-pan"
+  key_name = var.KEY_PAIR
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
@@ -40,7 +40,7 @@ output "docker_instance_public_ip" {
 resource "aws_instance" "web_instance" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
-  key_name = "nv-pan"
+  key_name = var.KEY_PAIR
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id, aws_security_group.allow_http.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
@@ -60,7 +60,7 @@ output "web_instance_public_ip" {
 resource "aws_instance" "test_instance" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
-  key_name = "nv-pan"
+  key_name = var.KEY_PAIR
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id, aws_security_group.allow_http.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
