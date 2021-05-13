@@ -9,7 +9,7 @@ resource "aws_instance" "utility_instance" {
 
   tags = {
     Name = "utility-instance"
-    Defender = "true"
+    Defender = "false"
   }
 }
 
@@ -24,11 +24,11 @@ resource "aws_instance" "docker_instance" {
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
-  iam_instance_profile = "ssm-mgr-role"
+  iam_instance_profile = aws_iam_instance_profile.ssm_mgr_policy.name
 
   tags = {
     Name = "docker-instance"
-    Defender = "true"
+    Defender = "false"
   }
 }
 
@@ -48,7 +48,7 @@ resource "aws_instance" "web_instance" {
 
   tags = {
     Name = "web-instance"
-    Defender = "true"
+    Defender = "false"
   }
 }
 
@@ -64,11 +64,11 @@ resource "aws_instance" "test_instance" {
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id, aws_security_group.allow_http.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
-  iam_instance_profile = "ssm-mgr-role"
+  iam_instance_profile = aws_iam_instance_profile.ssm_mgr_policy.name
 
   tags = {
     Name = "test-instance"
-    Defender = "true"
+    Defender = "false"
   }
 }
 
