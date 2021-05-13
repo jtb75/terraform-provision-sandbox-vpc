@@ -1,4 +1,4 @@
-resource "aws_iam_role" "ssm_role" {
+resource "aws_iam_role" "ssm_role_tf" {
   name = "ssm_role_tf_${random_pet.pet_name.id}"
 
   assume_role_policy = <<EOF
@@ -14,7 +14,7 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "role_attach" {
-  role       = aws_iam_role.ssm_role.name
+  role       = aws_iam_role.ssm_role_tf.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMFullAccess"
 }
 
