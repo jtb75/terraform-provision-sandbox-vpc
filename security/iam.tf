@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "var.EC2_REGION"
+}
+
 resource "aws_iam_role" "pc_flow_role" {
   name = "pc_flow_role"
 
