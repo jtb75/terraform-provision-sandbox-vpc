@@ -1,5 +1,10 @@
-provider "aws" {
-  region = "var.EC2_REGION"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.24.1"
+    }
+  }
 }
 
 resource "aws_iam_role" "pc_flow_role" {
