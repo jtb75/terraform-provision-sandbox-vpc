@@ -6,29 +6,29 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type = string
 }
 
-variable "ADMIN_IP" {
+variable "admin_ip" {
   default     = ["24.178.240.50/32"]
   description = "IP Address for accessing Admin Console"
 }
 
-variable "EC2_REGION" {
+variable "ec2_region" {
   description = "AWS region to launch servers"
   default     = "us-east-1"
 }
 
-variable "KEY_PAIR" {
+variable "key_pair" {
   type = string
   default = "nv-pan"
 }
 
 # https://aws.amazon.com/ec2/instance-types/
 # t3.large = 2 vCPU, 8 GiB RAM
-variable "TPOT_INSTANCE_TYPE" {
+variable "tpot_instance_type" {
   default = "t3.large"
 }
 
 # Refer to https://wiki.debian.org/Cloud/AmazonEC2Image/Buster
-variable "TPOT_AMI" {
+variable "tpot_ami" {
   type = map(string)
   default = {
     "af-south-1"     = "ami-04090a79eb0bcb6c1"
