@@ -21,7 +21,8 @@ variable "EC2_REGION" {
 }
 
 variable "KEY_PAIR" {
-  default = "nv-pan"
+  type = string
+  # default = "nv-pan"
 }
 
 # https://aws.amazon.com/ec2/instance-types/
