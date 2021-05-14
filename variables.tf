@@ -6,10 +6,6 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type = string
 }
 
-variable "KEY_PAIR" {
-  type = string
-}
-
 variable "ADMIN_IP" {
   default     = ["24.178.240.50/32"]
   description = "IP Address for accessing Admin Console"
@@ -22,7 +18,7 @@ variable "EC2_REGION" {
 
 variable "KEY_PAIR" {
   type = string
-  # default = "nv-pan"
+  default = "nv-pan"
 }
 
 # https://aws.amazon.com/ec2/instance-types/
