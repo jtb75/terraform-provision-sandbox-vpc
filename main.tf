@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "var.EC2_REGION"
 }
 
 resource "random_pet" "pet_name" {
